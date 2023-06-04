@@ -134,7 +134,7 @@ console.log(yearsUntilRetirement1(1938, 'Waldir'));
 // DATA STRUCTURE
 // Introduction to Arrays
 // > Arrays: 
-
+/*
 // How to create an array: 
 const friends = ['Michael', 'Steven', 'Peter']; // most common/basic way - Literal syntax
 console.log(friends);
@@ -175,5 +175,38 @@ console.log(age1, age2, age3);
 
 const ages = [calcAge(birthYears[0]), calcAge(birthYears[1]), calcAge(birthYears[birthYears.length - 1])];
 console.log(ages);
+*/
+// Basic Arrays Operations (methods)
 
-// Basic Arrays Operations
+const friends = ['Michael', 'Steven', 'Peter'];
+// .push() > adds to the end of an array
+// friends.push('Jay'); // push() also return the length of an array
+const newLenght = friends.push('Jay');
+console.log(friends);
+console.log(newLenght);
+ 
+// .unshift() > adds to the beginning of an array
+friends.unshift('John');
+console.log(friends);
+
+// .pop() > remove the last element of an array
+friends.pop(); // pop() also returns the removed element
+console.log(friends);
+
+// .shift() > remove the first element of an array
+friends.shift();
+console.log(friends);
+
+// > shows the position of an element in the array
+
+console.log(friends.indexOf('Steven'));
+console.log(friends.indexOf('Bob')); // returns -1 because Bob is not in the array
+
+// includes() - tests for value and type (strict comparison)
+console.log(friends.includes('Steven')); // includes also returns boolean
+console.log(friends.includes('Bob')); // verifies if the element is in the Array
+
+// includes() - useful for conditionals
+if (friends.includes('Peter')) {
+    console.log('You have a friend called Peter.');
+}
