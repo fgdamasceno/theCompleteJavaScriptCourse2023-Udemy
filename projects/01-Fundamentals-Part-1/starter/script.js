@@ -237,25 +237,28 @@
 
 // ==========
 
-// The Conditional (Ternary) Operator
-const age = 40;
-age >= 18 ? console.log('I like to drink beer 🍺') : console.log('I like to drink milk 🥛');
-// age >= 18 --> the condition
-// ? --> the conditional operator
-// console.log('I like to drink beer 🍺') --> the if statement (similar to) --> executed if true
-// console.log("I'm still too young 😢"); --> the else statemente --> executed if the previous statement is false
-// all the code above is an expression
+// // The Conditional (Ternary) Operator
+// const age = 40;
+// age >= 18 ? console.log('I like to drink beer 🍺') : console.log('I like to drink milk 🥛');
+// // age >= 18 --> the condition
+// // ? --> the conditional operator
+// // console.log('I like to drink beer 🍺') --> the if statement (similar to) --> executed if true
+// // console.log("I'm still too young 😢"); --> the else statemente --> executed if the previous statement is false
+// // all the code above is an expression
 
-const drink = age >= 18 ? 'beer 🍺' : 'milk 🥛';
+// const drink = age >= 18 ? 'beer 🍺' : 'milk 🥛';
 
-// the same code as above, but in if/else statements:
-let drink2;
-if (age >= 18) {
-    drink2 = 'beer 🍺';
-} else {
-    drink2 = 'milk 🥛';
-}
-console.log(drink2);
+// // the same code as above, but in if/else statements:
+// let drink2;
+// if (age >= 18) {
+//     drink2 = 'beer 🍺';
+// } else {
+//     drink2 = 'milk 🥛';
+// }
+// console.log(drink2);
 
-// using the ternary with template literals:
-console.log(`I like to drink ${drink}`) // or use the whole expression inside the curly braces
+// // using the ternary with template literals:
+// console.log(`I like to drink ${drink}`) // or use the whole expression inside the curly braces
+
+// ==========
+
