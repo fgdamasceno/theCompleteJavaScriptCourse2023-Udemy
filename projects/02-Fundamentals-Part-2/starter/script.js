@@ -5,7 +5,7 @@
 
 /*
 function logger() {
-    console.log('My name is Fernando');
+    console.log('My name is jonas');
 }
 
 // calling/running/invoking the function
@@ -84,7 +84,7 @@ const yearsUntilRetirement2 = (birthYear, firstName) => {
     // return retirement;
     return `${firstName} retires in ${retirement} years.`;
 }
-console.log(yearsUntilRetirement2(1982, "Fernando"));
+console.log(yearsUntilRetirement2(1982, "jonas"));
 */
 
 // ==========
@@ -127,7 +127,7 @@ const yearsUntilRetirement1 = function (birthYear, firstName) {
     //return retirement;
     return `${firstName} retires in ${retirement}`;
 }
-console.log(yearsUntilRetirement1(1982, 'Fernando'));
+console.log(yearsUntilRetirement1(1982, 'jonas'));
 console.log(yearsUntilRetirement1(1938, 'Waldir'));
 */
 
@@ -155,11 +155,11 @@ friends[2] = 'Jay'; // changing the value of an item using indexing
 console.log(friends);
 
 // Array with different types of values
-const firstName = 'Fernando';
-const fernando = ['firstName', 'Damasceno', 2023 - 1982, 'student', friends];
-console.log(fernando);
+const firstName = 'jonas';
+const jonas = ['firstName', 'Damasceno', 2023 - 1982, 'student', friends];
+console.log(jonas);
 // const anoDeNascimento = 1982; // precisa ser declarada antes de ser usada por um Array
-// const teste1 = [new Date().getFullYear() - anoDeNascimento, 'Fernando'];
+// const teste1 = [new Date().getFullYear() - anoDeNascimento, 'jonas'];
 
 // Exercise
 
@@ -177,7 +177,7 @@ const ages = [calcAge(birthYears[0]), calcAge(birthYears[1]), calcAge(birthYears
 console.log(ages);
 */
 // Basic Arrays Operations (methods)
-
+/*
 const friends = ['Michael', 'Steven', 'Peter'];
 // .push() > adds to the end of an array
 // friends.push('Jay'); // push() also return the length of an array
@@ -210,3 +210,132 @@ console.log(friends.includes('Bob')); // verifies if the element is in the Array
 if (friends.includes('Peter')) {
     console.log('You have a friend called Peter.');
 }
+*/
+
+// Introduction to Objects
+// Object Literal Syntax
+/*
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    jog: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+};
+*/
+
+// 37. Dot vs Bracket Notation
+
+// How to retrieve data from objects
+// How to change data inside objects
+
+/*
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+};
+console.log(jonas);
+
+console.log(jonas.lastName); // dot notation
+console.log(jonas['lastName']); // bracket notation
+
+// Bracket notation can receive an expression in the bracket, which produces a value. Example:
+const nameKey = 'Name'; // common in firstName and lastName
+console.log(jonas['first' + nameKey]); 
+console.log(jonas['last' + nameKey]);
+// the expression in the brackets above will produce two concatenated strings (firstName and lastName) which are the keys in the object 'jonas', and then the result value will print to the console the values from both keys
+
+/*
+// Example
+const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends');
+// console.log(jonas.interestedIn); // This produces an error (undefined) because interested in is not in the object 'jonas'
+console.log(jonas[interestedIn]); // this return a value, if the chosen option is in the object 'jonas', because bracket notation receives a expression, which will be calculated and then the value/result will be used to grab the information.
+*/
+
+/*
+// An example of code that will ignore an invalid user input and return to the question again
+if (jonas[interestedIn]) {
+    console.log(jonas[interestedIn]);
+} else {
+    console.log('Wrong request! Choose between firstName, lastName, age, job, and friends');
+}
+*/
+
+// Adding new properties to objects with dot and bracket notation
+/*
+jonas.location = 'Portugal'; // dot notation
+// adds 'locataion' as new property and 'Portugal' and value of the new property
+jonas['twitter'] = '@jonasschmedtman'; // bracket notation
+// adds 'twitter' as new property and '@jonasschmedtman' and value of the new property
+console.log(jonas);
+
+// Challenge
+// Write: "Jonas has 3 friends, and his best friend is called Michael" without hard coding
+console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best fried is called ${jonas.friends[0]}`); // Nailed it at the first attempt!!!
+*/
+
+// 38. Objects Methods
+
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+    // calcAge: function(birthYear) {
+    //     return 2037 - birthYear;
+    // }
+
+    // calcAge: function() {
+    //     return 2037 - this.birthYear;
+    // }
+
+    // calc the age and creates a new property 'age' with the calculated result as value
+    calcAge: function() {
+        this.age = new Date().getFullYear() - this.birthYear;
+        return this.age;
+    }
+
+};
+// the function in the object is a method, because every function that is attached to an object is a method.
+/*
+console.log(jonas.calcAge(1991)); // dot notation
+console.log(jonas["calcAge"](1991)); // brackets notation. ACHTUNG! look the syntax here!
+// in this example, brackets receiveis only the property/key name. The value passed to the function goes outside it, inside parenthesis
+console.log(jonas.calcAge(jonas.birthYear));
+*/
+
+// Using 'this' in the object
+// 'this' always points to the object calling the method
+// You could, for example, change the name of the object and the code would still work
+
+console.log(jonas.calcAge());
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+
+
+// Challenge
+// Create a method in the object and
+// Write: "Jonas is a 46-years old teacher, and he has a/no driver's licence"
+
+// My solution:
+jonas.getSummary = function() {
+    if (this.hasDriversLicense) {
+        return `${this.firstName} is a ${this.age}-year old ${this.job}, and he has a driver's licence`;
+    } else {
+        return `${this.firstName} is a ${this.age}-year old ${this.job}, and he has not a driver's licence`;
+    }
+};
+
+// Instructor solution: Used The Ternary Operator to check if he hasDriversLicense, and wrote the method inside the object, while I decided to create a method from outside the object
+/* 
+getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's licence``
+}
+*/
+console.log(jonas.getSummary());
