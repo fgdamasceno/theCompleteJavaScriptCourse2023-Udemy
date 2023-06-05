@@ -278,7 +278,7 @@ console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his bes
 */
 
 // 38. Objects Methods
-
+/*
 const jonas = {
     firstName: 'Jonas',
     lastName: 'Schmedtmann',
@@ -305,24 +305,25 @@ const jonas = {
 /*
 console.log(jonas.calcAge(1991)); // dot notation
 console.log(jonas["calcAge"](1991)); // brackets notation. ACHTUNG! look the syntax here!
-// in this example, brackets receiveis only the property/key name. The value passed to the function goes outside it, inside parenthesis
+// in this example, brackets receives only the property/key name. The value passed to the function goes outside it, inside parenthesis
 console.log(jonas.calcAge(jonas.birthYear));
 */
 
 // Using 'this' in the object
 // 'this' always points to the object calling the method
 // You could, for example, change the name of the object and the code would still work
-
+/*
 console.log(jonas.calcAge());
+// for the code below to work, you need to first call the code above!
 console.log(jonas.age);
 console.log(jonas.age);
 console.log(jonas.age);
-
+*/
 
 // Challenge
 // Create a method in the object and
 // Write: "Jonas is a 46-years old teacher, and he has a/no driver's licence"
-
+/*
 // My solution:
 jonas.getSummary = function() {
     if (this.hasDriversLicense) {
@@ -331,11 +332,13 @@ jonas.getSummary = function() {
         return `${this.firstName} is a ${this.age}-year old ${this.job}, and he has not a driver's licence`;
     }
 };
-
+*/
 // Instructor solution: Used The Ternary Operator to check if he hasDriversLicense, and wrote the method inside the object, while I decided to create a method from outside the object
 /* 
 getSummary: function () {
     return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's licence``
 }
 */
+/*
 console.log(jonas.getSummary());
+*/
