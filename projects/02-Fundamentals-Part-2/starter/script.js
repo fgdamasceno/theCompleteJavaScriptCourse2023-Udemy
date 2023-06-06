@@ -341,4 +341,3 @@ getSummary: function () {
 */
 /*
 console.log(jonas.getSummary());
-*/
