@@ -35,10 +35,11 @@ const john = {
     }
 }
 
+// Obs.: mark.calcBMI() tem que ser chamado primeiro, depois mark.bmi
+// Por isso, usei mark.calcBMI() como condição para o if statement, e só depois para o
+// console.log();
 if (mark.calcBMI() > john.calcBMI()) {
     console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s ${john.bmi}!`);
 } else {
     console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`);
 }
-
-// Instructor's solution
