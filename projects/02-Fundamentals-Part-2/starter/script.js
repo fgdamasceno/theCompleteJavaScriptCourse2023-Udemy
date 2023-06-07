@@ -697,21 +697,40 @@ if (mark.bmi > john.bmi) {
 
 // 49. THE WHILE LOOP
 
-const jonas = [
-    'Jonas',
-    'Schemedtmann',
-    2037 - 1991,
-    'teacher',
-    ['Michael', 'Peter', 'Steven']
-];
-
-for(let rep = 1; rep <=10; rep++) {
-    console.log(`Lifting weights repetition ${rep} 🏋🏽‍♂️`);
-  }
+// for(let rep = 1; rep <=10; rep++) {
+//     console.log(`Lifting weights repetition ${rep} 🏋🏽‍♂️`);
+// }
   
-  // while loop
-  let rep = 1;
-  while (rep <= 10) {
-  console.log(`Lifting weights repetition ${rep} 🏋🏽‍♂️`);
-  rep++;
-}
+// while loop
+// let rep = 1;
+// while (rep <= 10) {
+// console.log(`Lifting weights repetition ${rep} 🏋🏽‍♂️`);
+// rep++;
+// }
+
+// while loops do not need a counter. All that a while loop need is a condition. The counter used in the example above was only used because the example above needed a counter.
+
+// Example: Roll a dice until 6.
+// let dice = Math.trunc(Math.random() * 6) + 1;
+
+// while (dice !== 6) {
+//   console.log(`You rolled a ${dice}`);
+//   dice = Math.trunc(Math.random() * 6) + 1;
+//   if (dice === 6) console.log('Loop is about to end...');
+// }
+
+/////////////////////////////////////////////////////////////
+// CHALLENGE #4
+// Let's improve Steven's tip calculator even more, this time using loops!
+
+// Your tasks:
+
+// Create an array called bills containing all 10 test bill values.
+
+// Create empty arrays for the tips and the totals (tips and totals)
+
+// Use the calcTip function we wrote before (included in the starter code) to calculate tips and total values (bill + tip) for every bill value in the bills array. Use a for loop to perform the 10 calculations!
+
+
+
+// TEST DATA: 22, 295, 176, 440, 37, 105, 10, 1100, 86, and 52.
