@@ -177,19 +177,19 @@ TEST DATA 1: [17, 21, 23]
 TEST DATA 2; [12, 5, -5, 0, 4]
 */
 
-const forecast1 = [17, 21, 23];
-const forecast2 = [12, 5, -5, 0, 4];
+// const forecast1 = [17, 21, 23];
+// const forecast2 = [12, 5, -5, 0, 4];
 
-const printForecast = function (arr) {
-    let forecastMessage = '';
-    for (let i = 0; i < arr.length; i++) {
-        forecastMessage += `... ${arr[i]}°C in ${i + 1} days`;
-    }
-    return forecastMessage + "...";
-}
+// const printForecast = function (arr) {
+//     let forecastMessage = '';
+//     for (let i = 0; i < arr.length; i++) {
+//         forecastMessage += `... ${arr[i]}°C in ${i + 1} days`;
+//     }
+//     return forecastMessage + "...";
+// }
 
-console.log(printForecast(forecast1));
-console.log(printForecast(forecast2));
+// console.log(printForecast(forecast1));
+// console.log(printForecast(forecast2));
 
 /*
 Consegui resolver o problema até a parte onde as mensagens deveriam ser mostradas no
