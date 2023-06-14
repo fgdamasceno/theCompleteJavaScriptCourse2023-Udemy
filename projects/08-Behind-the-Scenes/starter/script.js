@@ -89,8 +89,8 @@ function deleteShoppingCart() {
 // 96. THE THIS KEYWORD
 
 ////////////////////////////////////////////////////////////////////////////////////////
-// 96. THE THIS KEYWORD IN PRACTICE
-
+// 97. THE THIS KEYWORD IN PRACTICE
+/*
 console.log(this);
 // Returns: Window {window: Window, self: Window, document: document, name: '', location: Location, …}
 
@@ -128,3 +128,38 @@ matilda.calcAge();
 
 const f = jonas.calcAge;
 f();
+*/
+
+////////////////////////////////////////////////////////////////////////////////////////
+// 98. REGULAR FUNCTIONS VS. ARROW FUNCTIONS
+/*
+const jonas = {
+  firstName: 'Jonas',
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+
+    const isMellenial = function () {
+      if (this.year >= 1981 && this.year <= 1996);
+    };
+    isMellenial();
+  },
+
+  greet: () => console.log(`Hey ${this.firstName}`),
+};
+jonas.greet(); // Returns: 'Hey undefined'. Arrow function does not have 'this keyword' (lexical, parent's scope this)
+jonas.calcAge();
+*/
+
+// Arguments Keyword
+// const addExpr = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+// console.log(addExpr(2, 5, 3, 12));
+
+// var addArrow = (a, b) => a + b;
+
+////////////////////////////////////////////////////////////////////////////////////////
+// 99. PRIMITIVES VS. OBJECTS (PRIMITIVE VS. REFERENCE TYPES)
