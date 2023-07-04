@@ -342,7 +342,7 @@ const jonas = {
   // }
 
   // calcAge: function () {
-  //   // console.log(this);
+  //   // console.log(this); // Retorna o objeto em si
   //   return 2037 - this.birthYeah;
   // }
 

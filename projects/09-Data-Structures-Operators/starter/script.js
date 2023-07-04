@@ -850,59 +850,252 @@ const objA = {
 // console.log([...question.keys()]);
 // console.log([...question.values()]);
 
-//////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
 // 121. WORKING WITH STRINGS - PART 1
-
-// Data needed for a later exercise
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
 // Examples of working with strings
-console.log(plane[0]);
-console.log(plane[1]);
-console.log(plane[2]);
-console.log(airline.length);
-console.log('B737'[0]);
-console.log('B737'.length);
+// console.log(plane[0]);
+// console.log(plane[1]);
+// console.log(plane[2]);
+// console.log(airline.length);
+// console.log('B737'[0]);
+// console.log('B737'.length);
 
 // string methods
-console.log(airline.indexOf('r')); // just the index of the first 'r
-console.log(airline.lastIndexOf('r')); // just the index of the last 'r
-console.log(airline.indexOf('Portugal')); // The initial index of 'Portugal'
-console.log(airline.indexOf('portugal')); // -1 because 'portugal' is not in the string
+// console.log(airline.indexOf('r')); // just the index of the first 'r
+// console.log(airline.lastIndexOf('r')); // just the index of the last 'r
+// console.log(airline.indexOf('Portugal')); // The initial index of 'Portugal'
+// console.log(airline.indexOf('portugal')); // -1 because 'portugal' is not in the string
 
 // for (const [...letter] of [airline]) console.log(letter); // string to array
 
 // How can these string methods be useful:
 // Extract parts of a string using the 'slice' method = slice(initialIndex, lastIndex)
 // initialIndex = start of extraction; lastIndex = end of extraction + 1
-console.log(airline.slice(4, 7)); // Returns Air (st = 4(A), li = 6(r)+1)
-console.log(airline.slice(4)); // start index to the end of the string
+// console.log(airline.slice(4, 7)); // Returns Air (st = 4(A), li = 6(r)+1)
+// console.log(airline.slice(4)); // start index to the end of the string
 
-console.log(airline.slice(0, airline.indexOf(' '))); // show the first word in the string
-console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // the last word in the string
+// console.log(airline.slice(0, airline.indexOf(' '))); // show the first word in the string
+// console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // the last word in the string
 
-console.log(airline.slice(-2));
-console.log(airline.slice(1, -1));
+// console.log(airline.slice(-2));
+// console.log(airline.slice(1, -1));
 
 // using string methods to return what is the seat in an airplane
-const checkMiddleSeat = function(seat) {
-  // B and E are middle seats (ABC DEF)
-  const s = seat.slice(-1);
-  if (s === 'B' || s === 'E') 
-  console.log('You got the middle seat 😬');
-  else console.log('You got lucky 😎');
-}
+// const checkMiddleSeat = function(seat) {
+//   // B and E are middle seats (ABC DEF)
+//   const s = seat.slice(-1);
+//   if (s === 'B' || s === 'E')
+//   console.log('You got the middle seat 😬');
+//   else console.log('You got lucky 😎');
+// }
 
-checkMiddleSeat('11B');
-checkMiddleSeat('23C');
-checkMiddleSeat('3E');
+// checkMiddleSeat('11B');
+// checkMiddleSeat('23C');
+// checkMiddleSeat('3E');
 
-//////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
 // 122. WORKING WITH STRINGS - PART 2
 
-// Changing the case of a string
+// // Changing the case of a string
+// console.log(airline.toLowerCase());
+// console.log(airline.toUpperCase());
 
+// // Fix capitalization in name
+// const passenger = 'fErNaNdO';
+// const passengerLower = passenger.toLowerCase();
+// const passengerCorrect =
+//   passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect);
+
+// // Comparing emails
+// const email = 'fgd@example.io';
+// const loginEmail = '  FgD@eXamPLe.Io  \n';
+
+// // Using toLowerCase() to converte the 'loginEmail to lower case
+// // and trim() to remove blank spaces and new lines, enter, etc...
+// const normalizedEmail = loginEmail.toLowerCase().trim();
+// console.log(normalizedEmail);
+// console.log(email === normalizedEmail);
+
+// // Replacing
+// const priceGB = '288,97£';
+// const priceUS = priceGB.replace('£', '$').replace(',', '.');
+// console.log(priceUS);
+
+// const announcement = 'All passengers come to door 23. Boarding door 23!';
+
+// console.log(announcement.replace('door', 'gate'));
+// // Returns: All passengers come to gate 23. Boarding door 23!
+// // The code above only replace the first 'door' found in the string
+
+// // Before ES2021 the developer had to use regular expression (regex):
+// console.log(announcement.replace(/door/g, 'gate'));
+// // Returns: All passengers come to gate 23. Boarding gate 23!
+
+// // ES2021 brought the method .replaceAll() to help with this:
+// console.log(announcement.replaceAll('door', 'gate'));
+// // Returns: All passengers come to gate 23. Boarding gate 23!
+
+// // Boolean
+// const newPlane = 'Airbus A320neo';
+// console.log(newPlane.includes('A320'));
+// console.log(newPlane.includes('Boeing'));
+// console.log(newPlane.includes('neo'));
+// console.log(newPlane.startsWith('Airb'));
+
+// if (newPlane.startsWith('Airbus') && newPlane.endsWith('neo')) {
+//   console.log('Parts of the NEW Airbus Family');
+// }
+
+// // Practice exercise
+// const checkBaggage = function (items) {
+//   const baggage = items.toLowerCase();
+//   if (baggage.includes('knife') || baggage.includes('gun')) {
+//     console.log('You are NOT allowed on board');
+//   } else {
+//     console.log('Welcome aboard!');
+//   }
+// };
+// checkBaggage('I have a Laptop, some Food and a pocket Knife');
+// checkBaggage('Socks and camera');
+// checkBaggage('Got some snacks and a gun for protection');
+/////////////////////////////////////////////////////////////////////////////////////////////
+// 122. WORKING WITH STRINGS - PART 3
+
+// // split() method - separates the elements of a string into an array
+// // join() method - join elements into a single string
+// console.log('a+very+nice+string'.split('+'));
+// console.log('Fernando Gonçalves Damasceno'.split(' '));
+// // Using split
+// const [firstName, , lastName] = 'Fernando Gonçalves Damasceno'.split(' ');
+// console.log(firstName, lastName);
+
+// const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+// console.log(newName);
+
+// // Taking a full name and converting into capitalized names
+// const capitalizeNames = function (name) {
+//   const names = name.split(' '); // recebe a string com nomes os separa pelo 'espaço'
+//   const namesUpper = []; // cria um array vazio que recebera os nomes individualmente
+
+//   for (const n of names) {
+//     namesUpper.push(n[0].toUpperCase() + n.slice(1).toLowerCase());
+//     // another way with similar result
+//     // namesUpper.push(n.replace(n[0], n[0].toUpperCase()))
+//   }
+//   console.log(namesUpper.join(' '));
+// };
+
+// capitalizeNames('fernando gonçalves damasceno');
+// capitalizeNames('joHn sMIth');
+// capitalizeNames('JANE DOE');
+
+// // Padding a string
+// // Preenche uma string com algum caractere até que alcance o tamanho desejado
+// const message = 'Go to gate 23!';
+// console.log(message.padStart(25, '.')); // this might be useful somehow!
+// console.log('Fernando'.padStart(25, '-')); // (tamanhoDaLinha, caractereDePreenchimento)
+// console.log(message.padEnd(25, '.')); // this might be useful somehow!
+// console.log('Fernando'.padEnd(25, '-')); // (tamanhoDaLinha, caractereDePreenchimento)
+// console.log('Fernando'.padStart(14, '-').padEnd(20, '-')); // linha com 20 caracteres
+// // No exemplo acima, para obter uma linha com 20 caracteres (6 para cada lado, visto que o
+// // nome contém 8) foi necessário calculara 8 + 6 = 14 para o 'padStart' e para o 'padEnd'
+// // foi necessário informar apenas o tamanho final da linha.
+
+// // Real World example: Credit Card number
+// const maskCreditCard = function (number) {
+//   const str = number + ''; // converte para string
+//   let last = str.slice(-4); // captura os 4 últimos caracteres da string
+//   return last.padStart(str.length, '*');
+// };
+// console.log(maskCreditCard(1234567890123456));
+
+// // Repeat method
+// const message2 = 'Bad weather... All Departures Delayed... \n'; // com \n fica melhor
+// console.log(message2.repeat(5));
+
+// const planesInLine = function (n) {
+//   console.log(`There are ${n} planes in line ${'✈️'.repeat(n)}`);
+// };
+// planesInLine(5);
+// planesInLine(3);
+// planesInLine(12);
+
+//////////////////////////////////////////////////////////////////////
+// 124. CODING CHALLENGE #4
+// CHALLENGE #4
+/* 
+Write a program that receives a list of variable names written in underscore_case and convert them to camelCase.
+
+The input will come from a textarea inserted into the DOM (see code below), and conversion will happen when the button is pressed.
+
+THIS TEST DATA (pasted to textarea)
+underscore_case
+ first_name
+Some_Variable 
+  calculate_AGE
+delayed_departure
+
+SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
+underscoreCase      ✅
+firstName           ✅✅
+someVariable        ✅✅✅
+calculateAge        ✅✅✅✅
+delayedDeparture    ✅✅✅✅✅
+
+HINT 1: Remember which character defines a new line in the textarea 😉
+HINT 2: The solution only needs to work for a variable made out of 2 words, like a_b
+HINT 3: Start without worrying about the ✅. Tackle that only after you have the variable name conversion working 😉
+HINT 4: This challenge is difficult on purpose, so start watching the solution in case you're stuck. Then pause and continue!
+
+Afterwards, test with your own test data!
+
+GOOD LUCK 😀
+*/
+// document.body.append(document.createElement('textarea'));
+// document.body.append(document.createElement('button'));
+
+// document.querySelector('button').addEventListener('click', function () {
+//   const text = document.querySelector('textarea').value;
+//   const rows = text.split('\n');
+
+//   for (const [i, row] of rows.entries()) {
+//     const [first, second] = row.toLowerCase().trim().split('_');
+//     // console.log(row, first, second);
+//     // console.log(second[0]);
+//     const output = `${first}${second.replace(
+//       second[0],
+//       second[0].toUpperCase()
+//     )}`;
+//     console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+//   }
+// });
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+// 125. STRING METHODS PRACTICE
+
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// GOAL:
+// 🔴 Delayed Departure from FAO to TXL (11h25)
+//              Arrival from BRU to FAO (11h45)
+//   🔴 Delayed Arrival from HEL to FAO (12h05)
+//            Departure from FAO to LIS (12h30)
+
+// console.log(flights.split('+'));
+
+const getCode = str => str.slice(0, 3).toUpperCase();
+
+for (const flight of flights.split('+')) {
+  const [type, from, to, time] = flight.split(';');
+  const output = `${type.startsWith('_Delayed') ? '🔴' : ''}${type.replaceAll(
+    '_',
+    ' '
+  )} from ${getCode(from)} to ${getCode(to)} (${time.replace(':', 'h')})`.padStart(44);
+  console.log(output);
+}
